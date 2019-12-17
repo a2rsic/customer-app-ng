@@ -22,7 +22,7 @@
         <tr *ngFor="let offer of offers; let i = index">
             <td>{{i + 1}}.</td>
             <td>
-                <a class="offer-link" [routerLink]="['substripction', 'offer.id']">
+                <a class="offer-link" [routerLink]="['/subscription', offer.id]">
                     {{offer.name}}
                 </a>
             </td>
