@@ -1,0 +1,13 @@
+.card {
+    width: 50%;
+    text-align: center;
+}
+
+table {
+    width: 70%;
+    margin: 50px auto;
+}
+
+.offer-link {
+    text-decoration: none;
+}
