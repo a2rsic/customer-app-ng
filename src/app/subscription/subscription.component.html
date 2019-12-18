@@ -1,1 +1,52 @@
-<p>subscription works!</p>
+<div class="container">
+    <mat-spinner class="loading" [diameter]="20" *ngIf="isLoading"></mat-spinner>
+    <div class="previous-page">
+        <span matTooltip="Back to previous page" (click)="goBack()">
+            <i class="material-icons icon">arrow_back</i>
+        </span>
+    </div>
+    <div class="title">
+        <h3>Subscriptions</h3>
+    </div>
+    <div class="card-container">
+        <div class="card" *ngFor="let subscription of subscriptions.subscriptions">
+            <div class="card-header">
+                <span class="font">Name:</span> &nbsp; {{subscription.name}}
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"> <span class="font">Type:</span> &nbsp;{{subscription.type}}</li>
+                <li class="list-group-item" *ngIf="subscription.usage">
+                    <mat-accordion>
+                        <mat-expansion-panel *ngFor="let usage of subscription.usage">
+                            <mat-expansion-panel-header>
+                                <mat-panel-title>
+                                    Usage
+                                </mat-panel-title>
+                                <mat-panel-description>
+                                    See more info
+                                </mat-panel-description>
+                            </mat-expansion-panel-header>
+                            <mat-list>
+                                <mat-list-item>
+                                    <span class="font">Type:</span>&nbsp;
+                                    <span class="usage">{{usage.type}}</span>
+                                </mat-list-item>
+                                <mat-divider></mat-divider>
+                                <mat-list-item>
+                                    <span class="font">Used:</span>&nbsp;
+                                    <span class="usage"> {{usage.used}}</span>
+                                </mat-list-item>
+                                <mat-divider></mat-divider>
+                                <mat-list-item>
+                                    <span class="font">Limit:</span>&nbsp;
+                                    <span class="usage"> {{usage.limit}}</span>
+                                </mat-list-item>
+                                <mat-divider></mat-divider>
+                            </mat-list>
+                        </mat-expansion-panel>
+                    </mat-accordion>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

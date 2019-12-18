@@ -1,0 +1,53 @@
+.container {
+    padding-bottom: 30px;
+}
+
+.icon {
+    cursor: pointer;
+}
+
+.loading {
+    position: fixed;
+    z-index: 999;
+    height: 2em;
+    width: 2em;
+    overflow: visible;
+    margin: auto;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.title {
+    text-align: center;
+    color: #1976d2;
+}
+
+.card {
+    width: 100%;
+    margin: 50px auto;
+}
+
+.card-header {
+    font-weight: 500;
+}
+
+.mat-expansion-panel {
+    box-shadow: none;
+    border-bottom: 1px solid rgba(0,0,0,.125);
+}
+
+.previous-page {
+    margin-top: 30px;
+}
+
+.font {
+    font-style: italic;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.usage {
+    font-weight: 500;
+}
