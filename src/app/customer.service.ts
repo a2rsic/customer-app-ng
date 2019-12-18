@@ -1,22 +1,23 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
-import { offers } from './data/offers-data';
-import { subscriptions } from './data/subscriptions-data';
+import { Observable } from 'rxjs';
 import { IOffer } from './types/offer.interface';
 import { ISubscription } from './types/subscription.interface';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CustomerService {
 
-  constructor() { }
+  private url = 'https://selfcare-service.demo.melita.com/interview/api/offers';
+
+  constructor(private http: HttpClient) { }
 
   public getOffers(): Observable<IOffer[]> {
-    return of(offers);
+    return this.http.get<IOffer[]>(this.url);
   }
 
-  public getSubscription(): Observable<ISubscription[]> {
-    return of(subscriptions);
+  public getSubscription(id: number): Observable<ISubscription[]> {
+    return this.http.get<ISubscription[]>(`${this.url}/${id}/subscriptions`);
   }
 }
