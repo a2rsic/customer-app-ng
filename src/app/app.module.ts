@@ -8,6 +8,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { SubscriptionComponent } from './subscription/subscription.component';
+import { CommonModule } from './common/common.module';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { SubscriptionComponent } from './subscription/subscription.component';
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
+    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -6,6 +6,7 @@ import { SubscriptionComponent } from './subscription/subscription.component';
 
 const routes: Routes = [
   { path: 'offers', component: LandingPageComponent },
+  { path: '', redirectTo: 'offers', pathMatch: 'full' },
   { path: 'offers/:id/subscriptions', component: SubscriptionComponent },
 
 ];
