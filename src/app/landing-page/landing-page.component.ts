@@ -10,6 +10,7 @@ import { IOffer } from '../types/offer.interface';
 export class LandingPageComponent implements OnInit {
 
   public offers: IOffer[] = [];
+  public isLoading = true;
 
   constructor(
     private customerService: CustomerService,
@@ -21,11 +22,12 @@ export class LandingPageComponent implements OnInit {
 
   private loadCustomerOffers() {
     this.customerService.getOffers().subscribe(
-      (response) => {
-        console.log('response :', response);
-        this.offers = response;
+      (offers) => {
+        this.isLoading = false;
+        this.offers = offers;
       },
       (error) => {
+        this.isLoading = false;
         console.log(error);
         alert('Something went wrong');
       }

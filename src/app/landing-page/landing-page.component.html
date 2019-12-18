@@ -1,32 +1,26 @@
-<!-- <div class="row">
-    <div class="col-sm-6" *ngFor="let offer of offers">
-        <div class="card">
-            <div class="card-body">
-                <span>Name:</span>
-                <h5 class="card-title">{{offer.name}}</h5>
-                <a [routerLink]="['substripction', 'offer.id']" class="btn btn-primary">See substripction</a>
-            </div>
-        </div>
+<div class="offers-container" *ngIf="offers">
+    <mat-spinner class="loading" [diameter]="20" *ngIf="isLoading"></mat-spinner>
+    <div class="title">
+        <h3>Customer offers</h3>
     </div>
-</div> -->
-
-<table class="table">
-    <thead class="thead-light">
-        <tr>
-            <th scope="col">No.</th>
-            <th scope="col">Name</th>
-            <th scope="col">Created at</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let offer of offers; let i = index">
-            <td>{{i + 1}}.</td>
-            <td>
-                <a class="offer-link" [routerLink]="['/subscription', offer.id]">
-                    {{offer.name}}
-                </a>
-            </td>
-            <td>{{offer.contractStartDate | date: 'mediumDate'}}</td>
-        </tr>
-    </tbody>
-</table>
+    <table class="table">
+        <thead class="thead-light">
+            <tr>
+                <th scope="col">No.</th>
+                <th scope="col">Name</th>
+                <th scope="col">Created at</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let offer of offers.offers; let i = index">
+                <td>{{i + 1}}.</td>
+                <td>
+                    <a class="offer-link" [routerLink]="[offer.id, 'subscriptions']">
+                        {{offer.name}}
+                    </a>
+                </td>
+                <td>{{offer.contractStartDate | date: 'mediumDate'}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

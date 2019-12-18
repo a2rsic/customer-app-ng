@@ -1,6 +1,6 @@
-.card {
-    width: 50%;
+.title {
     text-align: center;
+    margin: 20px 0;
 }
 
 table {
@@ -10,4 +10,17 @@ table {
 
 .offer-link {
     text-decoration: none;
+}
+
+.loading {
+    position: fixed;
+    z-index: 999;
+    height: 2em;
+    width: 2em;
+    overflow: visible;
+    margin: auto;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
 }
