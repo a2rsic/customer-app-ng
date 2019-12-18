@@ -15,7 +15,7 @@
             <tr *ngFor="let offer of offers.offers; let i = index">
                 <td>{{i + 1}}.</td>
                 <td>
-                    <a class="offer-link" [routerLink]="[offer.id, 'subscriptions']">
+                    <a matTooltip="See subscriptions" class="offer-link" [routerLink]="[offer.id, 'subscriptions']">
                         {{offer.name}}
                     </a>
                 </td>
