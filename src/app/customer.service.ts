@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+
 import { Observable, throwError } from 'rxjs';
 import { IOffer } from './types/offer.interface';
 import { ISubscription } from './types/subscription.interface';
-import { HttpClient } from '@angular/common/http';
 import { catchError } from 'rxjs/operators';
 
 @Injectable({
